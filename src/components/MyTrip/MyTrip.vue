@@ -1,22 +1,62 @@
 <script setup lang="ts">
+import Trip from "./../../Interfaces/Trip";
+
 import Container from "../Basics/Container/Container.vue";
 import MyTripCard from "./MyTripCard.vue";
 
-const trips = [
+const trips: Array<Trip> = [
 	{
 		title: "Trip to Indonesia",
 		currentTrip: true,
-		data: "1 Aug 2022",
+		members: [
+			{
+				name: "Kiera Watson",
+				src: "./../../../src/assets/images/avatars/avatar-4.png",
+			},
+			{
+				name: "Marc",
+				src: "./../../../src/assets/images/avatars/avatar-2.png",
+			},
+			{
+				name: "Nigela",
+				src: "./../../../src/assets/images/avatars/avatar.png",
+			},
+		],
+		numOfPlaces: 8,
 	},
 	{
-		title: "Trip to Malaysia",
+		title: "Trip to Indonesia",
 		currentTrip: true,
-		data: "1 Aug 2022",
+		members: [
+			{
+				name: "Kiera Watson",
+				src: "./../../../src/assets/images/avatars/avatar-4.png",
+			},
+			{
+				name: "Keane",
+				src: "./../../../src/assets/images/avatars/avatar-3.png",
+			},
+			{
+				name: "Nigela",
+				src: "./../../../src/assets/images/avatars/avatar.png",
+			},
+		],
+		numOfPlaces: 2,
 	},
 	{
-		title: "Trip to Singapore",
+		title: "Trip to Indonesia",
 		currentTrip: true,
-		data: "1 Aug 2022",
+		members: [
+			{
+				name: "Kiera Watson",
+				src: "./../../../src/assets/images/avatars/avatar-4.png",
+			},
+			{
+				name: "Keane",
+				src: "./../../../src/assets/images/avatars/avatar-3.png",
+			},
+		],
+		numOfPlaces: 2,
 	},
 ];
 </script>
@@ -29,7 +69,7 @@ const trips = [
 		</div>
 	</Container>
 	<div class="horizontal-scrolling">
-		<MyTripCard v-for="trip in trips" />
+		<MyTripCard v-for="trip in trips" :trip="trip" />
 	</div>
 </template>
 

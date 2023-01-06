@@ -1,14 +1,22 @@
 <script setup lang="ts">
+import Trip from "./../../Interfaces/Trip";
+
 import Icon from "./../Basics/Icons/Icons";
 import AvatarGroup from "../Basics/Avatar/AvatarGroup.vue";
 import Avatar from "../Basics/Avatar/Avatar";
+
+interface MyTripCardProps {
+	trip: Trip;
+}
+
+const props = defineProps<MyTripCardProps>();
 </script>
 
 <template>
 	<div class="card">
 		<div class="card-header">
 			<div>
-				<div class="card-title">Trip to Indonesia</div>
+				<div class="card-title">{{ props.trip.title }}</div>
 				<div class="card-subtitle">Current trip</div>
 			</div>
 			<div>
@@ -17,18 +25,12 @@ import Avatar from "../Basics/Avatar/Avatar";
 		</div>
 		<div class="card-footer">
 			<AvatarGroup>
-				<Avatar.Base size="sm">
-					<Avatar.Image
-						src="./../../../src/assets/images/avatars/avatar-2.png"
-					/>
-				</Avatar.Base>
-				<Avatar.Base size="sm">
-					<Avatar.Image
-						src="./../../../src/assets/images/avatars/avatar-3.png"
-					/>
+				<Avatar.Base v-for="member in props.trip.members" size="sm">
+					<Avatar.Image :src="member.src" />
 				</Avatar.Base>
 			</AvatarGroup>
-			<div>Aug 1, 2022 - 6 Places</div>
+
+			<div>{{ props.trip.numOfPlaces }} Places to go</div>
 		</div>
 	</div>
 </template>

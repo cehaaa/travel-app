@@ -1,6 +1,7 @@
 <script setup lang="ts">
 interface AvatarBaseProps {
 	size: string;
+	name?: string;
 }
 
 const props = withDefaults(defineProps<AvatarBaseProps>(), {
@@ -9,34 +10,48 @@ const props = withDefaults(defineProps<AvatarBaseProps>(), {
 </script>
 
 <template>
-	<div
-		class="avatar"
-		:class="{ sm: props.size === 'sm', base: props.size === 'base' }"
-	>
-		<slot />
+	<div class="avatar-base">
+		<div
+			class="avatar"
+			:class="{ sm: props.size === 'sm', base: props.size === 'base' }"
+		>
+			<slot />
+		</div>
+		<div class="name" v-if="props.name">{{ name }}</div>
 	</div>
 </template>
 
 <style lang="scss">
-.avatar {
-	border: 2px solid white;
-	background: lightgray;
-	border-radius: 50%;
-	overflow: hidden;
+.avatar-base {
+	display: flex;
+	align-items: center;
+	min-width: 50px;
+	min-height: 50px;
 
-	&.sm {
-		width: 40px;
-		height: 40px;
+	.avatar {
+		border: 2px solid white;
+		background: lightgray;
+		border-radius: 50%;
+		overflow: hidden;
+
+		&.sm {
+			width: 40px;
+			height: 40px;
+		}
+
+		&.base {
+			width: 50px;
+			height: 50px;
+		}
+
+		img {
+			width: 100%;
+			object-fit: cover;
+		}
 	}
 
-	&.base {
-		width: 50px;
-		height: 50px;
-	}
-
-	img {
-		width: 100%;
-		object-fit: cover;
+	.name {
+		margin-left: 8px;
 	}
 }
 </style>

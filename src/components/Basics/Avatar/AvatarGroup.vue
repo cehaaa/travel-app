@@ -10,12 +10,12 @@
 .avatar-group {
 	display: flex;
 
-	.avatar:first-child {
+	.avatar-base:first-child {
 		margin-left: 0;
 	}
 
-	.avatar {
-		margin-left: -10px;
+	.avatar-base {
+		margin-left: -20px;
 	}
 }
 </style>

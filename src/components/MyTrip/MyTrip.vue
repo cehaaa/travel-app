@@ -1,71 +1,15 @@
 <script setup lang="ts">
-import Trip from "./../../Interfaces/Trip";
-
 import Container from "../Basics/Container/Container.vue";
 import MyTripCard from "./MyTripCard.vue";
 
-const trips: Array<Trip> = [
-	{
-		title: "Trip to Indonesia",
-		currentTrip: true,
-		members: [
-			{
-				name: "Kiera Watson",
-				src: "./../../../src/assets/images/avatars/avatar-4.png",
-			},
-			{
-				name: "Marc",
-				src: "./../../../src/assets/images/avatars/avatar-2.png",
-			},
-			{
-				name: "Nigela",
-				src: "./../../../src/assets/images/avatars/avatar.png",
-			},
-		],
-		numOfPlaces: 8,
-	},
-	{
-		title: "Trip to Indonesia",
-		currentTrip: true,
-		members: [
-			{
-				name: "Kiera Watson",
-				src: "./../../../src/assets/images/avatars/avatar-4.png",
-			},
-			{
-				name: "Keane",
-				src: "./../../../src/assets/images/avatars/avatar-3.png",
-			},
-			{
-				name: "Nigela",
-				src: "./../../../src/assets/images/avatars/avatar.png",
-			},
-		],
-		numOfPlaces: 2,
-	},
-	{
-		title: "Trip to Indonesia",
-		currentTrip: true,
-		members: [
-			{
-				name: "Kiera Watson",
-				src: "./../../../src/assets/images/avatars/avatar-4.png",
-			},
-			{
-				name: "Keane",
-				src: "./../../../src/assets/images/avatars/avatar-3.png",
-			},
-		],
-		numOfPlaces: 2,
-	},
-];
+import trips from "../../utils/trips";
 </script>
 
 <template>
 	<Container>
 		<div class="my-trip">
 			<div class="title">My Trip</div>
-			<div class="plan-new-trip">Plan new trip</div>
+			<div class="text white">Plan new trip</div>
 		</div>
 	</Container>
 	<div class="horizontal-scrolling">
@@ -81,15 +25,6 @@ const trips: Array<Trip> = [
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 25px;
-
-	.title {
-		font-size: $lg;
-		font-weight: 500;
-	}
-
-	.plan-new-trip {
-		font-size: $sm;
-	}
 }
 
 .horizontal-scrolling {

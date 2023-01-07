@@ -2,7 +2,6 @@
 import Trip from "./../../Interfaces/Trip";
 
 import Icon from "./../Basics/Icons/Icons";
-import AvatarGroup from "../Basics/Avatar/AvatarGroup.vue";
 import Avatar from "../Basics/Avatar/Avatar";
 
 interface MyTripCardProps {
@@ -16,19 +15,21 @@ const props = defineProps<MyTripCardProps>();
 	<div class="card">
 		<div class="card-header">
 			<div>
-				<div class="card-title">{{ props.trip.title }}</div>
-				<div class="card-subtitle">Current trip</div>
+				<div class="subtitle black no-margin-t">
+					{{ props.trip.title }}
+				</div>
+				<div>Current trip</div>
 			</div>
 			<div>
 				<Icon.ElipsisVertical class="card-icon" />
 			</div>
 		</div>
 		<div class="card-footer">
-			<AvatarGroup>
+			<Avatar.Group>
 				<Avatar.Base v-for="member in props.trip.members" size="sm">
 					<Avatar.Image :src="member.src" />
 				</Avatar.Base>
-			</AvatarGroup>
+			</Avatar.Group>
 
 			<div>{{ props.trip.numOfPlaces }} Places to go</div>
 		</div>
@@ -70,16 +71,6 @@ const props = defineProps<MyTripCardProps>();
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-	}
-
-	.card-title {
-		font-weight: 500;
-		font-size: $base;
-		color: $black;
-	}
-
-	.card-subtitle {
-		margin-top: 3px;
 	}
 
 	.card-icon {

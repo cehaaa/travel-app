@@ -1,34 +1,45 @@
 <script setup lang="ts">
-import Icon from "../Basics/Icons/Icons";
-import Avatar from "../Basics/Avatar/Avatar";
+import { RouterLink } from "vue-router";
 
 import Guide from "../../Interfaces/Guide";
+
+import slug from "../../utils/slug";
+
+import Badge from "../Badge/Badge.vue";
+import Icon from "../Basics/Icons/Icons";
+import Avatar from "../Basics/Avatar/Avatar";
 
 interface GuideCardProps {
 	guide: Guide;
 }
 
 const props = defineProps<GuideCardProps>();
+
+const destination = slug(props.guide.title);
 </script>
 
 <template>
 	<div class="card">
-		<div class="card-header">
-			<img :src="props.guide.src" class="guide-image" alt="" />
-			<div class="badge">Guide</div>
-		</div>
-		<div class="card-body">
-			<div class="card-title">{{ props.guide.title }}</div>
-			<div class="card-text">
-				{{ props.guide.description }}
+		<RouterLink
+			:to="{ name: 'guide-detail', params: { guideTitle: destination } }"
+		>
+			<div class="card-header">
+				<img :src="props.guide.src" class="guide-image" />
+				<Badge>Guide</Badge>
 			</div>
-		</div>
+			<div class="card-body">
+				<div class="subtitle black">{{ props.guide.title }}</div>
+				<div>
+					{{ props.guide.description }}
+				</div>
+			</div>
+		</RouterLink>
 		<div class="card-footer">
 			<div class="left">
 				<Avatar.Base size="sm">
 					<Avatar.Image :src="props.guide.publisher.src" />
 				</Avatar.Base>
-				<div class="card-text">{{ props.guide.publisher.name }}</div>
+				<div class="subtile black">{{ props.guide.publisher.name }}</div>
 			</div>
 			<div>
 				<Icon.Bookmark />
@@ -40,30 +51,32 @@ const props = defineProps<GuideCardProps>();
 <style lang="scss" scoped>
 @import "./../../scss/variables";
 .card {
+	text-decoration: none;
+	font-size: $sm;
+
+	a {
+		text-decoration: none;
+		color: $gray-500;
+	}
 	.card-header {
 		position: relative;
-		min-height: 200px;
+		height: 200px;
+		overflow: hidden;
+		width: 390px;
 		.guide-image {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-		}
+			transition-duration: 200ms;
 
-		.badge {
-			position: absolute;
-			top: 15px;
-			right: 15px;
-			background: rgba(107, 114, 128, 0.7);
-			padding: 5px 12px;
-			color: white;
-			font-size: $sm;
-			font-weight: 500;
-			border-radius: 5px;
+			&:hover {
+				transform: scale(1.1) rotate(1.2deg);
+			}
 		}
 	}
 
 	.card-body {
-		padding: 10px 20px;
+		padding: 15px 20px;
 	}
 
 	.card-footer {
@@ -81,18 +94,6 @@ const props = defineProps<GuideCardProps>();
 				margin-right: 10px;
 			}
 		}
-	}
-
-	.card-title {
-		font-size: $sm;
-		font-weight: 500;
-		margin-bottom: 8px;
-	}
-
-	.card-text {
-		font-size: $sm;
-		color: $gray-500;
-		line-height: 1.4rem;
 	}
 }
 </style>

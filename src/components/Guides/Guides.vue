@@ -10,7 +10,16 @@ import GuideCard from "./GuideCard.vue";
 </template>
 
 <style lang="scss" scoped>
+@import "./../../scss/_variables.scss";
+
 .guide-group {
+	a {
+		text-decoration: none;
+		color: $black;
+		display: block;
+		margin-bottom: 2rem;
+	}
+
 	.card {
 		margin-bottom: 2rem;
 	}

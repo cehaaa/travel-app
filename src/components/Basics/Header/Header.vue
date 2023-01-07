@@ -10,7 +10,7 @@ import Avatar from "../Avatar/Avatar";
 			<div class="heading">
 				<div>
 					<div class="title">Hi, <span class="name">Kiera Watson</span></div>
-					<div class="subtitle">Explore beauty of journey</div>
+					<div>Explore beauty of journey</div>
 				</div>
 				<div>
 					<Avatar.Base size="base">
@@ -34,6 +34,7 @@ header {
 	height: 220px;
 	color: white;
 	padding-top: 20px;
+	font-size: $sm;
 
 	.heading {
 		widows: 100%;
@@ -47,10 +48,6 @@ header {
 			.name {
 				font-weight: 600;
 			}
-		}
-		.subtitle {
-			font-size: $sm;
-			margin-top: 0.2rem;
 		}
 	}
 }

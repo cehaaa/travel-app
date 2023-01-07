@@ -13,7 +13,7 @@ import Avatar from "../Avatar/Avatar";
 					<div class="subtitle">Explore beauty of journey</div>
 				</div>
 				<div>
-					<Avatar.Base>
+					<Avatar.Base size="base">
 						<Avatar.Image
 							src="./../../../../src/assets/images/avatars/avatar-4.png"
 						/>
@@ -25,7 +25,7 @@ import Avatar from "../Avatar/Avatar";
 	</header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "./../../../scss/_variables.scss";
 
 header {

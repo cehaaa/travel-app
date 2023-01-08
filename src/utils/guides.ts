@@ -10,6 +10,27 @@ export const guides: Array<Guide> = [
 			src: "./../../../../src/assets/images/avatars/avatar-2.png",
 			name: "Marc",
 		},
+		plans: [
+			[
+				{
+					title: "The Great Wall",
+					description:
+						"Lorem ipsum dolor sit amet, consectetur elit. Sed a dui et velit rhoncus commodo. Donec veibulum condimentum leo ac mattis.",
+				},
+				{
+					title: "Forbiden City",
+					description:
+						"Lorem ipsum dolor sit amet, consectetur elit. Sed a dui et velit rhoncus commodo. Donec veibulum condimentum leo ac mattis.",
+				},
+			],
+			[
+				{
+					title: "Emperor Qinshihuang's Museum",
+					description:
+						"Lorem ipsum dolor sit amet, consectetur elit. Sed a dui et velit rhoncus commodo. Donec veibulum condimentum leo ac mattis.",
+				},
+			],
+		],
 	},
 	{
 		title: "Trip to Kiyomizu Dera",
@@ -20,6 +41,22 @@ export const guides: Array<Guide> = [
 			src: "./../../../../src/assets/images/avatars/avatar.png",
 			name: "Nigela",
 		},
+		plans: [
+			[
+				{
+					title: "Kyoto Imperial Palace",
+					description:
+						"Lorem ipsum dolor sit amet, consectetur elit. Sed a dui et velit rhoncus commodo. Donec veibulum condimentum leo ac mattis.",
+				},
+			],
+			[
+				{
+					title: "Ninja Museum Igaryu",
+					description:
+						"Lorem ipsum dolor sit amet, consectetur elit. Sed a dui et velit rhoncus commodo. Donec veibulum condimentum leo ac mattis.",
+				},
+			],
+		],
 	},
 ];
 

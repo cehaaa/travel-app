@@ -22,6 +22,8 @@ const props = withDefaults(defineProps<AvatarBaseProps>(), {
 </template>
 
 <style lang="scss">
+@import "./../../../scss/_variables.scss";
+
 .avatar-base {
 	display: flex;
 	align-items: center;
@@ -52,6 +54,7 @@ const props = withDefaults(defineProps<AvatarBaseProps>(), {
 
 	.name {
 		margin-left: 8px;
+		color: $black;
 	}
 }
 </style>

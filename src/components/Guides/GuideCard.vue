@@ -36,10 +36,9 @@ const destination = slug(props.guide.title);
 		</RouterLink>
 		<div class="card-footer">
 			<div class="left">
-				<Avatar.Base size="sm">
+				<Avatar.Base size="sm" :name="props.guide.publisher.name">
 					<Avatar.Image :src="props.guide.publisher.src" />
 				</Avatar.Base>
-				<div class="subtile black">{{ props.guide.publisher.name }}</div>
 			</div>
 			<div>
 				<Icon.Bookmark />
@@ -76,7 +75,7 @@ const destination = slug(props.guide.title);
 	}
 
 	.card-body {
-		padding: 15px 20px;
+		padding: 15px 20px 5px;
 	}
 
 	.card-footer {

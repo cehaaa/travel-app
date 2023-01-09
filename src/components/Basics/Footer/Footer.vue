@@ -1,31 +1,20 @@
 <script setup lang="ts">
 import Icon from "./../Icons/Icons";
+import Footer from "./Footer";
 </script>
 
 <template>
-	<footer class="footer">
-		<div>
+	<Footer.Base>
+		<Footer.Item to="/" exactPath="/">
 			<Icon.Home />
-		</div>
-		<div>
+		</Footer.Item>
+		<Footer.Item to="/create-new-trip" exactPath="create-new-trip">
 			<Icon.Plus />
-		</div>
-		<div>
+		</Footer.Item>
+		<Footer.Item to="/profile" exactPath="profile">
 			<Icon.User />
-		</div>
-	</footer>
+		</Footer.Item>
+	</Footer.Base>
 </template>
 
-<style lang="scss" scoped>
-.footer {
-	width: 390px;
-	background: white;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	position: fixed;
-	bottom: 0;
-	height: 72px;
-	padding: 0 50px;
-}
-</style>
+<style lang="scss" scoped></style>

@@ -41,9 +41,9 @@ import trips from "../../utils/trips";
 	.card:last-child {
 		margin-right: 0;
 	}
-}
 
-.horizontal-scrolling::-webkit-scrollbar {
-	display: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }
 </style>

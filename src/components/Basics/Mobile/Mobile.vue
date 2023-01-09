@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ScrollToTop from "../ScrollToTop/ScrollToTop.vue";
+</script>
 
 <template>
 	<main class="mobile">

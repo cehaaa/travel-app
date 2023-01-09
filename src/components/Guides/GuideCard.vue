@@ -3,9 +3,9 @@ import { RouterLink } from "vue-router";
 
 import Guide from "../../Interfaces/Guide";
 
-import slug from "../../utils/slug";
+import useSlug from "../../utils/useSlug";
 
-import Badge from "../Badge/Badge.vue";
+import Badge from "../Basics/Badge/Badge.vue";
 import Icon from "../Basics/Icons/Icons";
 import Avatar from "../Basics/Avatar/Avatar";
 
@@ -15,7 +15,9 @@ interface GuideCardProps {
 
 const props = defineProps<GuideCardProps>();
 
-const destination = slug(props.guide.title);
+const { makeSlug } = useSlug();
+
+const destination = makeSlug(props.guide.title);
 </script>
 
 <template>
@@ -41,7 +43,7 @@ const destination = slug(props.guide.title);
 				</Avatar.Base>
 			</div>
 			<div>
-				<Icon.Bookmark />
+				<Icon.Bookmark size="sm" />
 			</div>
 		</div>
 	</div>

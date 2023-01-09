@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface IconProps {
+	size?: string;
+}
+
+const props = defineProps<IconProps>();
+</script>
 
 <template>
 	<svg
@@ -7,7 +13,7 @@
 		viewBox="0 0 24 24"
 		stroke-width="1.5"
 		stroke="currentColor"
-		class="icon"
+		:class="{ 'icon base': !props.size, 'icon sm': props.size === 'sm' }"
 	>
 		<path
 			stroke-linecap="round"

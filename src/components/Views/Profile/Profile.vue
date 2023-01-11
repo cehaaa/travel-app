@@ -1,7 +1,9 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Container from "../../Basics/Container/Container.vue";
+</script>
 
 <template>
-	<div>Profile</div>
+	<Container>Profile</Container>
 </template>
 
 <style lang="scss" scoped></style>

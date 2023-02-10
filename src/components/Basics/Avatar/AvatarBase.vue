@@ -13,7 +13,11 @@ const props = withDefaults(defineProps<AvatarBaseProps>(), {
 	<div class="avatar-base">
 		<div
 			class="avatar"
-			:class="{ sm: props.size === 'sm', base: props.size === 'base' }"
+			:class="{
+				sm: props.size === 'sm',
+				base: props.size === 'base',
+				xxl: props.size === 'xxl',
+			}"
 		>
 			<slot />
 		</div>
@@ -27,6 +31,7 @@ const props = withDefaults(defineProps<AvatarBaseProps>(), {
 .avatar-base {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	min-width: 50px;
 	min-height: 50px;
 
@@ -35,6 +40,9 @@ const props = withDefaults(defineProps<AvatarBaseProps>(), {
 		background: lightgray;
 		border-radius: 50%;
 		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		&.sm {
 			width: 40px;
@@ -44,6 +52,11 @@ const props = withDefaults(defineProps<AvatarBaseProps>(), {
 		&.base {
 			width: 50px;
 			height: 50px;
+		}
+
+		&.xxl {
+			width: 150px;
+			height: 150px;
 		}
 
 		img {

@@ -14,6 +14,7 @@ const props = withDefaults(defineProps<AvatarBaseProps>(), {
 		<div
 			class="avatar"
 			:class="{
+				xs: props.size === 'xs',
 				sm: props.size === 'sm',
 				base: props.size === 'base',
 				xxl: props.size === 'xxl',
@@ -32,8 +33,8 @@ const props = withDefaults(defineProps<AvatarBaseProps>(), {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-width: 50px;
-	min-height: 50px;
+	min-width: 30px;
+	min-height: 30px;
 
 	.avatar {
 		border: 2px solid white;
@@ -43,6 +44,11 @@ const props = withDefaults(defineProps<AvatarBaseProps>(), {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		&.xs {
+			width: 30px;
+			height: 30px;
+		}
 
 		&.sm {
 			width: 40px;

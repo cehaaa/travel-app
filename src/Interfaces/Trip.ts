@@ -5,4 +5,5 @@ export default interface Trip {
 	currentTrip: boolean;
 	members: Array<Person>;
 	numOfPlaces: number;
+	src: string;
 }

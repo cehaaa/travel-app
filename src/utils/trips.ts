@@ -19,9 +19,10 @@ export const trips: Array<Trip> = [
 			},
 		],
 		numOfPlaces: 8,
+		src: "./../../../src/assets/images/places/indonesia.png",
 	},
 	{
-		title: "Trip to Indonesia",
+		title: "Trip to Japan",
 		currentTrip: true,
 		members: [
 			{
@@ -38,9 +39,10 @@ export const trips: Array<Trip> = [
 			},
 		],
 		numOfPlaces: 2,
+		src: "./../../../src/assets/images/places/japan.png",
 	},
 	{
-		title: "Trip to Indonesia",
+		title: "Trip to China",
 		currentTrip: true,
 		members: [
 			{
@@ -53,6 +55,7 @@ export const trips: Array<Trip> = [
 			},
 		],
 		numOfPlaces: 2,
+		src: "./../../../src/assets/images/places/china.png",
 	},
 ];
 

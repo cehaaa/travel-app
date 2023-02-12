@@ -4,11 +4,29 @@ import Trip from "./../../Interfaces/Trip";
 import Icon from "./../Basics/Icons/Icons";
 import Avatar from "../Basics/Avatar/Avatar";
 
+import Nigela from "./../../assets/images/avatars/avatar.png";
+import Marc from "./../../assets/images/avatars/avatar-2.png";
+import Keane from "./../../assets/images/avatars/avatar-3.png";
+import KieraWatson from "./../../assets/images/avatars/avatar-4.png";
+
 interface MyTripCardProps {
 	trip: Trip;
 }
 
 const props = defineProps<MyTripCardProps>();
+
+const getExactAvatarProfile = (src: string) => {
+	switch (src.toLowerCase()) {
+		case "kiera watson":
+			return KieraWatson;
+		case "keane":
+			return Keane;
+		case "nigela":
+			return Nigela;
+		case "marc":
+			return Marc;
+	}
+};
 </script>
 
 <template>
@@ -27,7 +45,7 @@ const props = defineProps<MyTripCardProps>();
 		<div class="card-footer">
 			<Avatar.Group>
 				<Avatar.Base v-for="member in props.trip.members" size="sm">
-					<Avatar.Image :src="member.src" />
+					<Avatar.Image :src="getExactAvatarProfile(member.name)" />
 				</Avatar.Base>
 			</Avatar.Group>
 

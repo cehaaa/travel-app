@@ -11,12 +11,38 @@ import Section from "../../Basics/Section/Section";
 import BackLink from "../../Basics/BackLink/BackLink.vue";
 import ScrollToTop from "../../Basics/ScrollToTop/ScrollToTop.vue";
 
+import Nigela from "./../../../assets/images/avatars/avatar.png";
+import Marc from "./../../../assets/images/avatars/avatar-2.png";
+
+import GreatWall from "./../../../assets/images/places/china.png";
+import KiyomizuDera from "./../../../assets/images/places/japan.png";
+
 const route = useRoute();
 const { toNormalString } = useSlug();
 
 const title = toNormalString(route.params.guideTitle as string);
 
 const guide: Guide = selectGuide(title);
+
+const getBannerImage = (src: string) => {
+	console.log(src);
+
+	switch (src.toLowerCase()) {
+		case "trip to the great wall of china":
+			return GreatWall;
+		case "trip to kiyomizu dera":
+			return KiyomizuDera;
+	}
+};
+
+const getAvatarImage = (src: string) => {
+	switch (src.toLowerCase()) {
+		case "nigela":
+			return Nigela;
+		case "marc":
+			return Marc;
+	}
+};
 </script>
 
 <template>
@@ -26,14 +52,18 @@ const guide: Guide = selectGuide(title);
 
 	<div class="guide-header">
 		<div class="overlay"></div>
-		<img class="guide-image" :src="guide.src" :alt="guide.title" />
+		<img
+			class="guide-image"
+			:src="getBannerImage(guide.title)"
+			:alt="guide.title"
+		/>
 		<div class="guide-title">{{ guide.title }}</div>
 	</div>
 	<div class="guide-body">
 		<Section.Base>
 			<Section.Header>
 				<Avatar.Base size="base" :name="guide.publisher.name">
-					<Avatar.Image :src="guide.publisher.src" />
+					<Avatar.Image :src="getAvatarImage(guide.publisher.name)" />
 				</Avatar.Base>
 			</Section.Header>
 			<Section.Body>

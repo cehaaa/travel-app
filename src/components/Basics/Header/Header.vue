@@ -2,6 +2,8 @@
 import Container from "../Container/Container.vue";
 import MyTrip from "../../MyTrip/MyTrip.vue";
 import Avatar from "../Avatar/Avatar";
+
+import UserAvatar from "./../../../assets/images/avatars/avatar-4.png";
 </script>
 
 <template>
@@ -14,9 +16,7 @@ import Avatar from "../Avatar/Avatar";
 				</div>
 				<div>
 					<Avatar.Base size="base">
-						<Avatar.Image
-							src="./../../../../src/assets/images/avatars/avatar-4.png"
-						/>
+						<Avatar.Image :src="UserAvatar" />
 					</Avatar.Base>
 				</div>
 			</div>

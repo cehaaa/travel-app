@@ -9,6 +9,8 @@ import BackLink from "../../Basics/BackLink/BackLink.vue";
 import Tabs from "../../Basics/Tabs/Tabs.vue";
 import MyTripCardImage from "../../MyTrip/MyTripCardImage.vue";
 
+import UserAvatar from "../../../assets/images/avatars/avatar-4.png";
+
 const tabs: string[] = ["Trip Plans", "Guides"];
 
 const activeTab: Ref<string> = ref("Trip Plans");
@@ -25,9 +27,7 @@ const changeTab = (tab: string) => {
 		<div>
 			<div class="profile-picture">
 				<Avatar.Base size="xxl">
-					<Avatar.Image
-						src="./../../../../src/assets/images/avatars/avatar-4.png"
-					/>
+					<Avatar.Image :src="UserAvatar" />
 				</Avatar.Base>
 				<div class="profile-edit-action">
 					<svg

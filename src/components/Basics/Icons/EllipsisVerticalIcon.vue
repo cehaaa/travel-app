@@ -1,9 +1,9 @@
 <script setup lang="ts">
-interface ElipsisVerticalIconProps {
+interface EllipsisVerticalIconProps {
 	class: string;
 }
 
-const props = defineProps<ElipsisVerticalIconProps>();
+const props = defineProps<EllipsisVerticalIconProps>();
 </script>
 
 <template>

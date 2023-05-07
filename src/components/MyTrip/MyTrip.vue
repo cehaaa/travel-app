@@ -9,7 +9,7 @@ import trips from "../../utils/trips";
 	<Container>
 		<div class="my-trip">
 			<div class="title">My Trip</div>
-			<div class="text white">Plan new trip</div>
+			<div class="text-white cursor-pointer">Plan new trip</div>
 		</div>
 	</Container>
 	<div class="horizontal-scrolling">

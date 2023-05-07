@@ -14,8 +14,10 @@ import ScrollToTop from "../../Basics/ScrollToTop/ScrollToTop.vue";
 import Nigela from "./../../../assets/images/avatars/avatar.png";
 import Marc from "./../../../assets/images/avatars/avatar-2.png";
 
-import GreatWall from "./../../../assets/images/places/china.png";
-import KiyomizuDera from "./../../../assets/images/places/japan.png";
+import GreatWall from "@/assets/images/places/china.png";
+import KiyomizuDera from "@/assets/images/places/japan.png";
+
+import type ObjectOfString from "../../../types/ObjectOfString";
 
 const route = useRoute();
 const { toNormalString } = useSlug();
@@ -25,23 +27,21 @@ const title = toNormalString(route.params.guideTitle as string);
 const guide: Guide = selectGuide(title);
 
 const getBannerImage = (src: string) => {
-	console.log(src);
+	const images: ObjectOfString = {
+		"trip to the great wall of china": GreatWall,
+		"trip to kiyomizu dera": KiyomizuDera,
+	};
 
-	switch (src.toLowerCase()) {
-		case "trip to the great wall of china":
-			return GreatWall;
-		case "trip to kiyomizu dera":
-			return KiyomizuDera;
-	}
+	return images[src.toLowerCase()];
 };
 
 const getAvatarImage = (src: string) => {
-	switch (src.toLowerCase()) {
-		case "nigela":
-			return Nigela;
-		case "marc":
-			return Marc;
-	}
+	const images: ObjectOfString = {
+		nigela: Nigela,
+		marc: Marc,
+	};
+
+	return images[src.toLowerCase()];
 };
 </script>
 

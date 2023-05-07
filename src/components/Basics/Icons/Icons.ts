@@ -2,14 +2,14 @@ import HomeIcon from "./HomeIcon.vue";
 import PlusIcon from "./PlusIcon.vue";
 import UserIcon from "./UserIcon.vue";
 import EllipsisVerticalIcon from "./EllipsisVerticalIcon.vue";
-import BookmarkIcon from "./BookmarkIcon.vue";
+import SaveIcon from "./SaveIcon.vue";
 
 const Icon = {
 	Home: HomeIcon,
 	Plus: PlusIcon,
 	User: UserIcon,
-	EllipsisVerticalIcon: EllipsisVerticalIcon,
-	Bookmark: BookmarkIcon,
+	EllipsisVertical: EllipsisVerticalIcon,
+	Save: SaveIcon,
 };
 
 export default Icon;

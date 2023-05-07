@@ -26,21 +26,21 @@ const { makeSlug } = useSlug();
 const destination = makeSlug(props.guide.title);
 
 const getExactImage = (src: string) => {
-	switch (src.toLowerCase()) {
-		case "trip to the great wall of china":
-			return GreatWall;
-		case "trip to kiyomizu dera":
-			return KiyomizuDera;
-	}
+	const images: { [key: string]: string } = {
+		"trip to the great wall of china": GreatWall,
+		"trip to kiyomizu dera": KiyomizuDera,
+	};
+
+	return images[src.toLowerCase()];
 };
 
 const getExactProfileImage = (src: string) => {
-	switch (src.toLowerCase()) {
-		case "nigela":
-			return Nigela;
-		case "marc":
-			return Marc;
-	}
+	const images: { [key: string]: string } = {
+		nigela: Nigela,
+		marc: Marc,
+	};
+
+	return images[src.toLowerCase()];
 };
 </script>
 
@@ -65,12 +65,12 @@ const getExactProfileImage = (src: string) => {
 			<div class="left">
 				<Avatar.Base size="sm" :name="props.guide.publisher.name">
 					<Avatar.Image
-						:src="getExactProfileImage(props.guide.publisher.name)"
+						:src="getExactProfileImage(props.guide.publisher.name)!"
 					/>
 				</Avatar.Base>
 			</div>
 			<div>
-				<Icon.Bookmark size="sm" />
+				<Icon.Save size="sm" />
 			</div>
 		</div>
 	</div>

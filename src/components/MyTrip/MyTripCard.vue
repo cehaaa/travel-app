@@ -16,16 +16,14 @@ interface MyTripCardProps {
 const props = defineProps<MyTripCardProps>();
 
 const getExactAvatarProfile = (src: string) => {
-	switch (src.toLowerCase()) {
-		case "kiera watson":
-			return KieraWatson;
-		case "keane":
-			return Keane;
-		case "nigela":
-			return Nigela;
-		case "marc":
-			return Marc;
-	}
+	const avatar: { [key: string]: string } = {
+		"kiera watson": KieraWatson,
+		keane: Keane,
+		nigela: Nigela,
+		marc: Marc,
+	};
+
+	return avatar[src.toLowerCase()];
 };
 </script>
 
@@ -39,13 +37,13 @@ const getExactAvatarProfile = (src: string) => {
 				<div>Current trip</div>
 			</div>
 			<div>
-				<Icon.ElipsisVertical class="card-icon" />
+				<Icon.EllipsisVertical class="card-icon" />
 			</div>
 		</div>
 		<div class="card-footer">
 			<Avatar.Group>
 				<Avatar.Base v-for="member in props.trip.members" size="sm">
-					<Avatar.Image :src="getExactAvatarProfile(member.name)" />
+					<Avatar.Image :src="getExactAvatarProfile(member.name)!" />
 				</Avatar.Base>
 			</Avatar.Group>
 
